@@ -1,123 +1,261 @@
-<!-- gallery.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Nako Connect Club</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
-    <!-- Navigation (same as index.html) -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>NCC</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="gallery.html" class="nav-link">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a href="register.html" class="nav-link">Register</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Nako Connect Club</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#activities">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Gallery Hero Section -->
-    <section class="gallery-hero">
+    <!-- Gallery Header -->
+    <section class="gallery-header">
         <div class="container">
-            <h1>NCC Gallery</h1>
-            <p>Explore moments from our events and activities</p>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <div class="container">
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/0066cc/ffffff?text=NCC+Event+1" alt="NCC Event 1" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/000000/ffffff?text=NCC+Event+2" alt="NCC Event 2" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/FFD700/000000?text=NCC+Event+3" alt="NCC Event 3" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/0066cc/ffffff?text=NCC+Event+4" alt="NCC Event 4" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/000000/ffffff?text=NCC+Event+5" alt="NCC Event 5" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/FFD700/000000?text=NCC+Event+6" alt="NCC Event 6" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/0066cc/ffffff?text=NCC+Event+7" alt="NCC Event 7" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/000000/ffffff?text=NCC+Event+8" alt="NCC Event 8" class="gallery-image">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://placehold.co/400x300/FFD700/000000?text=NCC+Event+9" alt="NCC Event 9" class="gallery-image">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Our Gallery</h1>
+                    <p class="lead">Memorable moments from our activities and events</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="gallery-cta">
+    <!-- Gallery Filters -->
+    <section class="gallery-filters py-4 bg-light">
         <div class="container">
-            <h2>Want to be part of our next event?</h2>
-            <p>Join Nako Connect Club today and participate in our upcoming activities</p>
-            <a href="register.html" class="cta-button">Become a Member</a>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="filter-buttons">
+                        <button class="btn btn-outline-primary active" data-filter="all">All</button>
+                        <button class="btn btn-outline-primary" data-filter="events">Events</button>
+                        <button class="btn btn-outline-primary" data-filter="meetings">Meetings</button>
+                        <button class="btn btn-outline-primary" data-filter="community">Community Service</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
-    <footer class="footer">
+    <!-- Gallery Grid -->
+    <section class="gallery-grid py-5">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Nako Connect Club</h3>
-                    <p>Progress, Peace & Unity</p>
+            <div class="row">
+                <!-- Gallery Item 1 -->
+                <div class="col-md-4 mb-4 gallery-item events">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO1.jpg" alt="NCC Members" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>NCC Members</h4>
+                                <p>Our dedicated team working together</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="register.html">Register</a></li>
-                    </ul>
+                
+                <!-- Gallery Item 2 -->
+                <div class="col-md-4 mb-4 gallery-item meetings">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO2.jpg" alt="Meeting Session" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>Meeting Session</h4>
+                                <p>Strategic planning and brainstorming</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>Email: nakoconnect4life@gmail.com</p>
-                    <p>Phone: 09091423322, 08023198652, 08068486960</p>
-                    <p>Address: 1 Muritala Muhammad Int'l Airport Road, Ikeja Lagos.</p>
+                
+                <!-- Gallery Item 3 -->
+                <div class="col-md-4 mb-4 gallery-item events">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO3.jpg" alt="Chinese's Current" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>HANGOUT</h4>
+                                <p>Cultural exchange event</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="col-md-4 mb-4 gallery-item events">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO4.jpg" alt="Chinenye and Onemoth" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>CHINENYE & ONEYEKA</h4>
+                                <p>Special recognition ceremony</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="col-md-4 mb-4 gallery-item community">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO5.jpg" alt="Community Outreach" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>VISITATION</h4>
+                                <p>Making a difference together</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="col-md-4 mb-4 gallery-item meetings">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO6.jpg" alt="Group Discussion" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>Group Discussion</h4>
+                                <p>Sharing ideas and perspectives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 7 -->
+                <div class="col-md-4 mb-4 gallery-item events">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO7.jpg" alt="Networking Event" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>Networking Event</h4>
+                                <p>Connecting professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 8 -->
+                <div class="col-md-4 mb-4 gallery-item community">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO8.jpg" alt="Charity Work" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>Charity Work</h4>
+                                <p>Giving back to the community</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 9 -->
+                <div class="col-md-4 mb-4 gallery-item events">
+                    <div class="gallery-card">
+                        <img src="assets/images/NACO9.jpg" alt="Kogosi Meeting Point" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">
+                                <h4>IKOGOSI MEETING POINT</h4>
+                                <p>Warm and Cold Springs gathering</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Nako Connect Club. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-arrow-left me-2"></i> Back to Homepage
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h2 class="footer-heading mb-4">About Nako Connect Club</h2>
+                            <p>Established in 2017, Nako Connect Club brings together professionals from various fields to foster growth, unity, and community development.</p>
+                        </div>
+                        <div class="col-md-4 ml-auto">
+                            <h2 class="footer-heading mb-4">Quick Links</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html#about">About Us</a></li>
+                                <li><a href="index.html#activities">Our Activities</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="index.html#contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ml-auto">
+                    <div class="mb-5">
+                        <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
+                        <form action="#" method="post" class="footer-subscribe-form">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <h2 class="footer-heading mb-4">Follow Us</h2>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="pt-5">
+                        <p>
+                            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Nako Connect Club
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="gallery.js"></script>
 </body>
 </html>

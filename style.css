@@ -207,6 +207,80 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--ncc-yellow);
 }
 
+/* Gallery Preview Section */
+.gallery-preview-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-preview-card:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-preview-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.gallery-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-preview-card:hover .gallery-preview-image img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-preview-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-caption {
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.gallery-caption h4 {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.btn-outline-primary {
+  border-color: var(--ncc-blue);
+  color: var(--ncc-blue);
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--ncc-blue);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
 /* Features Section */
 .bg-image.overlay {
   position: relative;
@@ -442,6 +516,15 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.text-white {
+  color: white !important;
+  padding: 15px;
+  background: #2a2a2a;
+  border-radius: 5px;
+  margin: 15px 0;
+  border-left: 4px solid #ffcc00;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .carousel-caption h1 {
@@ -472,6 +555,10 @@ h1, h2, h3, h4, h5, h6 {
   .contact-card, .membership-form {
     padding: 25px;
   }
+  
+  .gallery-preview-image {
+    height: 200px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -489,5 +576,9 @@ h1, h2, h3, h4, h5, h6 {
   
   .site-section {
     padding: 60px 0;
+  }
+  
+  .gallery-preview-image {
+    height: 180px;
   }
 }
