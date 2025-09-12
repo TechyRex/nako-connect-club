@@ -33,9 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
- /* Slogan banner */
+/* Slogan banner */
         .slogan-banner {
-            background-color: #000080;
+            background-color: var(--ncc-blue);
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
         }
         
         .top-bar a:hover {
-            color: #003366;
+            color: var(--ncc-blue);
         }
         
         /* Header and navigation */
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
         .site-logo a {
             font-size: 24px;
             font-weight: bold;
-            color: #003366;
+            color: var(--ncc-blue) !important;
         }
         
         .site-menu {
@@ -92,17 +92,22 @@ h1, h2, h3, h4, h5, h6 {
         
         .site-menu a {
             margin: 0 15px;
-            color: #495057;
+            color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .site-menu a:hover {
-            color: #003366;
+            color: var(--ncc-blue);
         }
         
         .toggle-button {
             display: none;
+            color: var(--text-color); /* Changed bar icon color to #495057 */
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
         
         /* Mobile menu styles */
@@ -121,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
             display: block;
             padding: 10px 0;
             border-bottom: 1px solid #eee;
-            color: #495057;
+            color: var(--text-color);
         }
         
         .mobile-menu a:last-child {
