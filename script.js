@@ -1,49 +1,49 @@
-// script.js for NCC mobile navigation
-document.addEventListener('DOMContentLoaded', function() {
-    // Select the menu toggle button
-    const menuToggle = document.querySelector('.js-menu-toggle');
-    const siteNavbar = document.querySelector('.site-navbar');
-    const siteMenu = document.querySelector('.site-menu');
-    
-    // Create a function to toggle the menu
-    function toggleMenu() {
-        const isMenuVisible = siteMenu.style.display === 'block';
-        
-        if (isMenuVisible) {
-            siteMenu.style.display = 'none';
-            menuToggle.querySelector('i').classList.remove('fa-times');
-            menuToggle.querySelector('i').classList.add('fa-bars');
-        } else {
-            siteMenu.style.display = 'block';
-            menuToggle.querySelector('i').classList.remove('fa-bars');
-            menuToggle.querySelector('i').classList.add('fa-times');
-        }
-    }
-    
-    // Add click event to the toggle button
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            toggleMenu();
+ document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality
+            const menuToggle = document.querySelector('.js-menu-toggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (mobileMenu.classList.contains('active') && 
+                    !e.target.closest('.mobile-menu') && 
+                    !e.target.closest('.js-menu-toggle')) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                        }
+                        
+                        // Scroll to the target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for header height
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
-    }
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!siteNavbar.contains(e.target) && siteMenu.style.display === 'block') {
-            toggleMenu();
-        }
-    });
-    
-    // Close menu when window is resized to desktop size
-    window.addEventListener('resize', function() {
-        if (window.innerWidth >= 992 && siteMenu.style.display === 'block') {
-            siteMenu.style.display = 'none';
-            menuToggle.querySelector('i').classList.remove('fa-times');
-            menuToggle.querySelector('i').classList.add('fa-bars');
-        }
-    });
-});
+
 // Form submission handling for registration
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registration-form');
