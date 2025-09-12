@@ -1,93 +1,50 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-  // Mobile menu toggle
-  const menuToggle = document.querySelector('.js-menu-toggle');
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      const menu = document.querySelector('.site-menu');
-      if (menu) {
-        menu.classList.toggle('d-block');
-        menu.classList.toggle('mobile-menu');
-      }
-    });
-  }
-  
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        // Close mobile menu if open
-        const menu = document.querySelector('.site-menu');
-        if (menu && menu.classList.contains('mobile-menu')) {
-          menu.classList.remove('d-block');
-          menu.classList.remove('mobile-menu');
-        }
-        
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
+ document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle - Fixed version
+      const menuToggle = document.querySelector('.js-menu-toggle');
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const menu = document.querySelector('.site-menu');
+          if (menu) {
+            menu.classList.toggle('mobile-open');
+          }
         });
       }
-    });
-  });
-  
-  // Add animation on scroll
-  function animateOnScroll() {
-    const elements = document.querySelectorAll('.mission-card, .history-card, .feature-card, .activity-card');
-    
-    elements.forEach(element => {
-      const position = element.getBoundingClientRect();
       
-      // If element is in viewport
-      if(position.top < window.innerHeight - 100) {
-        element.style.opacity = 1;
-        element.style.transform = 'translateY(0)';
-      }
+      // Close menu when clicking on a link (mobile)
+      document.querySelectorAll('.site-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+          const menu = document.querySelector('.site-menu');
+          if (window.innerWidth < 992 && menu) {
+            menu.classList.remove('mobile-open');
+          }
+        });
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          if (this.hash !== "") {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              // Close mobile menu if open
+              const menu = document.querySelector('.site-menu');
+              if (menu && menu.classList.contains('mobile-open')) {
+                menu.classList.remove('mobile-open');
+              }
+              
+              targetElement.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
     });
-  }
-  
-  // Initialize elements for animation
-  const animatedElements = document.querySelectorAll('.mission-card, .history-card, .feature-card, .activity-card');
-  animatedElements.forEach(element => {
-    element.style.opacity = 0;
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  });
-  
-  // Run on load and scroll
-  window.addEventListener('load', animateOnScroll);
-  window.addEventListener('scroll', animateOnScroll);
-  
-  // Initialize carousel with interval
-  const myCarousel = document.querySelector('#hero-carousel');
-  if (myCarousel) {
-    const carousel = new bootstrap.Carousel(myCarousel, {
-      interval: 5000,
-      wrap: true
-    });
-  }
-});
-
-// Mobile menu toggle
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}));
-
 // Form submission handling for registration
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registration-form');
