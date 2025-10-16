@@ -1,0 +1,186 @@
+/* Admin Blog Styles */
+.admin-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f8f9fa;
+}
+
+.admin-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.admin-card .card-header {
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  border-bottom: none;
+}
+
+.admin-card .card-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.admin-card .card-body {
+  padding: 30px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-control {
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.image-preview {
+  border: 2px dashed #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 5px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.stat-item h4 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #007bff;
+}
+
+.stat-item p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.recent-post-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.recent-post-item:last-child {
+  border-bottom: none;
+}
+
+.recent-post-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.recent-post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recent-post-info h5 {
+  font-size: 0.9rem;
+  margin: 0 0 5px 0;
+}
+
+.recent-post-info p {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Table Styles */
+.table th {
+  border-top: none;
+  font-weight: 600;
+  color: #333;
+  background: #f8f9fa;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-published {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-draft {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.btn-action {
+  padding: 5px 10px;
+  margin: 0 2px;
+  font-size: 0.8rem;
+}
+
+/* Modal Styles */
+.modal-content {
+  border: none;
+  border-radius: 10px;
+}
+
+.modal-header {
+  background: #007bff;
+  color: white;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+}
